@@ -1,85 +1,89 @@
-set noswapfile
+" no vi compatibility
+set nocompatible
 
-" ----------------------------------------------------------------------------
-"  Text Formatting
-" ----------------------------------------------------------------------------
+" Show position in file
+set ruler
 
-set autoindent             " automatic indent new lines
-set smartindent            " be smart about it
-inoremap # X<BS>#
-set nowrap                 " do not wrap lines
-set softtabstop=2          " yep, two
-set shiftwidth=2           " ..
-set tabstop=4
-set expandtab              " expand tabs to spaces
-set nosmarttab             " fuck tabs
-set formatoptions+=n       " support for numbered/bullet lists
-"set textwidth=80           " wrap at 80 chars by default
-set virtualedit=block      " allow virtual edit in visual block ..
+" Show line numbers
+set number
 
-" ----------------------------------------------------------------------------
-"  Remapping
-" ----------------------------------------------------------------------------
+set noerrorbells  " No noise.
+set laststatus=2  " Always show status line.
 
-" lead with ,
+" Use 2 spaces for tabs, turn on automatic indenting
+set tabstop=2
+set smarttab
+set shiftwidth=2
+set autoindent
+set expandtab
+set backspace=start,indent,eol
+
+" Turn on incremental search, case-insensitive search and syntax highlighting
+set incsearch
+set ignorecase
+syntax on
+
+" Set leader to comma
 let mapleader = ","
 
-" exit to normal mode with 'jj'
-inoremap jj <ESC>
+" CommandT
+nmap <silent> <leader>g :CommandT<CR>
 
+" Set up command for NERDTree
+map <leader>n :NERDTreeToggle<CR>
 
-" reflow paragraph with Q in normal and visual mode
-nnoremap Q gqap
-vnoremap Q gq
+" Set up command for Tlist
+map <leader>t :TlistToggle<CR>
+" only display tags for open buffer
+let Tlist_Show_One_File = 1
 
-" sane movement with wrap turned on
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
+" Make backspace and cursor keys wrap accordingly"
+" TODO: delete if you find you don't need it
+" set whichwrap+=<,>,h,l
 
-" ----------------------------------------------------------------------------
-"  UI
-" ----------------------------------------------------------------------------
+" Make editing .vimrc easier
+map <leader>v :sp ~/.vimrc<CR>
 
-set ruler                  " show the cursor position all the time
-set noshowcmd              " don't display incomplete commands
-set nolazyredraw           " turn off lazy redraw
-set number                 " line numbers
-set wildmenu               " turn on wild menu
-set wildmode=list:longest,full
-set ch=2                   " command line height
-set backspace=2            " allow backspacing over everything in insert mode
-set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
-set shortmess=filtIoOA     " shorten messages
-set report=0               " tell us about changes
-set nostartofline          " don't jump to the start of line when scrolling
+" Generate a tags file in the current directory using Exuberant ctags
+map <leader>e :silent :! ctags --recurse --sort=yes;sort tags > tmptags;mv tmptags tags<CR>:exe ":echo 'tags generated'"<CR>
 
+filetype plugin indent on
 
-" ----------------------------------------------------------------------------
-" Visual Cues
-" ----------------------------------------------------------------------------
+" Invisible characters *********************************************************
+set listchars=trail:.,tab:>-,eol:$
+set nolist
+map <leader>i :set list!<CR> " Toggle invisible chars"
 
-set showmatch              " brackets/braces that is
-set mat=5                  " duration to show matching brace (1/10 sec)
-set incsearch              " do incremental searching
-set laststatus=2           " always show the status line
-set ignorecase             " ignore case when searching
-set nohlsearch             " don't highlight searches
-set visualbell             " shut the fuck up
+" Omni Completion
+" *************************************************************
+autocmd FileType html :set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
 
+" May require ruby compiled in
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete 
 
-" ---------------------------------------------------------------------------
-"  Strip all trailing whitespace in file
-" ---------------------------------------------------------------------------
+" put swap files in fixed dir
+:set dir=~/Documents/vim_swap
 
-function! StripWhitespace ()
-    exec ':%s/ \+$//gc'
+" online ruby/rails documentation search
+function! OnlineDoc()
+  if &ft =~ "ruby"
+    let s:urlTemplate = "http://railsapi.com/doc/rails-v2.3.8_ruby-v1.8/?q=%"
+  else
+    return
+  endif
+  let s:wordUnderCursor = expand("<cword>")
+  let s:url = substitute(s:urlTemplate, "%", s:wordUnderCursor, "g")
+  let s:cmd = "!open \"" . s:url . "\""
+  execute s:cmd
 endfunction
-map ,s :call StripWhitespace ()<CR>
+
+map <silent> <leader>d :call OnlineDoc()<CR>
+
+" look for tags in pwd
+set tags=./tags
