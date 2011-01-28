@@ -15,6 +15,10 @@ If you're interested in the philosophy behind why projects like these are
 awesome, you might want to [read Holman's post on the
 subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 
+## install prereqs
+
+Have [hub](http://chriswanstrath.com/hub/) installed
+
 ## install
 
 - `git clone git://github.com/holman/dotfiles ~/.dotfiles`
