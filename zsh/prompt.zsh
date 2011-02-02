@@ -1,44 +1,49 @@
-autoload colors && colors
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
+autoload colors
+
+ruby_version() {
+  v=$(ruby -v | awk '{ printf("%.5s", $2) }')
+  echo -ne "$v"
+}
+
 git_branch() {
-  echo $(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+  echo $(git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
 git_dirty() {
-  st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
+  st=$(git status 2>/dev/null | tail -n 1)
   if [[ $st == "" ]]
   then
-    echo ""
+    echo " "
   else
     if [[ $st == "nothing to commit (working directory clean)" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo " "
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "*"
     fi
   fi
 }
 
 git_prompt_info () {
- ref=$(/usr/bin/git symbolic-ref HEAD 2>/dev/null) || return
-# echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
- echo "${ref#refs/heads/}"
+ ref=$(git symbolic-ref HEAD 2>/dev/null) || return
+ echo "(%{\e[0;35m%}${ref#refs/heads/}%{\e[0m%}/)"
 }
 
 project_name () {
-  name=$(pwd | awk -F'Development/' '{print $2}' | awk -F/ '{print $1}')
+  name=$(pwd | awk -F'projects/' '{print $2}' | awk -F/ '{print $1}')
   echo $name
 }
 
 project_name_color () {
-#  name=$(project_name)
+  name=$(project_name)
   echo "%{\e[0;35m%}${name}%{\e[0m%}"
 }
 
 unpushed () {
-  /usr/bin/git cherry -v origin/$(git_branch) 2>/dev/null
+  git cherry -v origin/$(git_branch) 2>/dev/null
 }
 
 need_push () {
@@ -46,28 +51,30 @@ need_push () {
   then
     echo " "
   else
-    echo "with %{$fg_bold[magenta]%}unpushed%{$reset_color%}"
+    echo "%{\e[0;33m%}$%{\e[0m%}"
   fi
 }
 
-rvm_prompt(){
-  if $(which rvm &> /dev/null)
-  then
-	  echo "%{$fg_bold[yellow]%}$(rvm tools identifier)%{$reset_color%}"
-	else
-	  echo ""
-  fi
-}
-
-directory_name(){
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
-}
-
-export PROMPT=$'\nin $(directory_name) $(project_name_color)$(git_dirty) $(need_push)\n› '
+export PROMPT=$'%{$fg[red]%}$(ruby_version) %{\e[0;36m%}%1/%{\e[0m%}/ '
 set_prompt () {
-  export RPROMPT=""
+  export RPROMPT="$(git_prompt_info)$(git_dirty)$(need_push)"
+}
+
+set_iterm_title() {
+  echo -ne "\e]2;$(pwd)\a" 
+}
+
+set_iterm_tab() {
+  if [ $TABNAME ]
+  then
+    echo -ne "\e]1;$TABNAME\a" 
+  else
+    echo -ne "\e]1;$(project_name)\a" 
+  fi
 }
 
 precmd() {
   set_prompt
+  set_iterm_title
+  set_iterm_tab
 }
