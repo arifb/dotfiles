@@ -21,7 +21,7 @@ Have [hub](http://chriswanstrath.com/hub/) installed
 
 ## install
 
-- `git clone git://github.com/holman/dotfiles ~/.dotfiles`
+- `git clone git://github.com/arifb/dotfiles ~/.dotfiles`
 - `cd ~/.dotfiles`
 - `rake install`
 
