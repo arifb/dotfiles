@@ -31,10 +31,6 @@ class Object
   end
 end
 
-def me
-  User.find_by_login('arifbandali')
-end
-
 def r
   reload!
 end

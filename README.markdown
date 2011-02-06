@@ -9,15 +9,12 @@ Holman was a little tired of having long alias files and everything strewn about
 (which is extremely common on other dotfiles projects, too). That led to this
 project being much more topic-centric. Like a true haxor he realized he could 
 split a lot of things up into the main areas he used and structured the project 
-accordingly.
+accordingly. I liked it and forked it; in the process I simplified/removed alot
+of aspects that holman uses, and I don't.
 
 If you're interested in the philosophy behind why projects like these are
 awesome, you might want to [read Holman's post on the
 subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
-
-## install prereqs
-
-Have [hub](http://chriswanstrath.com/hub/) installed
 
 ## install
 
@@ -38,14 +35,13 @@ Everything's built around topic areas. If you're adding a new area to your
 forked dotfiles — say, "Java" — you can simply add a `java` directory and put
 files in there. Anything with an extension of `.zsh` will get automatically
 included into your shell. Anything with an extension of `.symlink` will get
-symlinked without extension into `$HOME` when you run `rake install`.
+symlinked without extension, as a dotfile into `$HOME` when you run `rake install`.
 
 ## what's inside
 
-A lot of what's inside is just aliases: `gs` for `git status`, `gl` for `git
-pull --rebase --prune`, for example. You can browse the `aliases.zsh` files in
-each topic directory. There's also a collection of scripts in `bin` you can
-browse. A few notable ones:
+A lot of what's inside is just aliases: `gs` for `git status` for example. You can 
+browse the `aliases.zsh` files in each topic directory. There's also a collection 
+of scripts in `bin` you can browse. A few notable ones:
 
 ###rails
 - `s` pings your system for any running Rails apps, and `deathss` will then
@@ -55,19 +51,17 @@ browse. A few notable ones:
 ###system
 - `c` is an autocomplete shortcut to your projects directory. For example, `c
   git` and then hitting tab will autocomplete to `github`, and then it simply
-  changes to my `github` directory.
-- `check [filename]` is a quick script that tells you whether a domain is
+  changes to my `github` directory. 
+- `check [domain]` is a quick script that tells you whether a domain is
   available to register.
 - `smartextract [filename]` will extract about a billion different
   compressed/uncompressed/whatever files and you'll never have to remember the
   syntax.
-- `backup` is a quick hook into `rsync` to backup a selection of files. Check
-  out the comments for more details.
 
 - If you want some more colors for things like `ls`, install grc: `brew install
   grc`.
 - If you install the excellent [rvm](http://rvm.beginrescueend.com) to manage
-  multiple rubies, your current branch will show up in the prompt. Bonus.
+  multiple rubies, your current branch will show up in the prompt.
 
 ## thanks
 
