@@ -6,6 +6,6 @@ if &background == "dark"
   hi normal guibg=black
   set transp=0
 endif
-set gfn=Inconsolata:h18
+set gfn=Inconsolata:h20
 set guioptions=egmrt
 set showtabline=2
