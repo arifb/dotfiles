@@ -1,0 +1,1 @@
+grep -rni $1 . | grep -v tags | grep -v log/ | grep -v tmp/ | grep -v .gems/ ;
