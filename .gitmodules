@@ -1,0 +1,18 @@
+[submodule "vim/vim.symlink/bundle/fugitive"]
+	path = vim/vim.symlink/bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule "vim/vim.symlink/bundle/nerdtree"]
+	path = vim/vim.symlink/bundle/nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
+[submodule "vim/vim.symlink/bundle/command-t"]
+	path = vim/vim.symlink/bundle/command-t
+	url = http://github.com/wincent/Command-T
+[submodule "vim/vim.symlink/bundle/rails"]
+	path = vim/vim.symlink/bundle/rails
+	url = http://github.com/tpope/vim-rails
+[submodule "vim/vim.symlink/bundle/surround"]
+	path = vim/vim.symlink/bundle/surround
+	url = http://github.com/tpope/vim-surround
+[submodule "vim/vim.symlink/bundle/taglist"]
+	path = vim/vim.symlink/bundle/taglist
+	url = http://github.com/vim-scripts/taglist.vim
