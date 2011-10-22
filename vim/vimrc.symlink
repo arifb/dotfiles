@@ -46,9 +46,6 @@ let Tlist_Show_One_File = 1
 " Make editing .vimrc easier
 map <leader>v :sp ~/.vimrc<CR>
 
-" Generate a tags file in the current directory using Exuberant ctags
-map <leader>e :silent :! ctags --recurse --sort=yes;sort tags > tmptags;mv tmptags tags<CR>:exe ":echo 'tags generated'"<CR>
-
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 filetype plugin indent on
