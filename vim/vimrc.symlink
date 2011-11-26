@@ -88,3 +88,10 @@ map <silent> <leader>d :call OnlineDoc()<CR>
 
 " look for tags in pwd
 set tags=./tags
+
+" Restore cursor position
+" used for interactive_editor which allows using vim for irb commands
+autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
