@@ -1,11 +1,8 @@
 " gui
 set lines=60
 set columns=220
-colorscheme vividchalk
-if &background == "dark"
-  hi normal guibg=black
-  set transp=0
-endif
+colorscheme solarized
+set background=dark
 set gfn=Inconsolata:h20
 set guioptions=egmrt
 set showtabline=2
