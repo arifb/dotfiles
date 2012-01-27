@@ -1,10 +1,12 @@
 #!/usr/bin/ruby
 require 'irb/completion'
 require 'irb/ext/save-history'
-require 'rubygems'
-require 'wirb' # colourizing
-Wirb.start
-require 'interactive_editor'
+require 'rubygems' unless defined? Gem
+# for some reason in rails console it can't find 'wirb' or 'interactive_editor' even though they are installed as global gems
+#
+#require 'wirb' # colourizing
+#Wirb.start
+#require 'interactive_editor'
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
@@ -32,8 +34,4 @@ class Object
     end
     puts `ri '#{method}'`
   end
-end
-
-def r
-  reload!
 end

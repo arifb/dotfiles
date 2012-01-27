@@ -7,6 +7,6 @@ alias sg='script/generate'
 alias migrate='rake db:migrate db:test:clone'
 
 alias s="ps aux | grep \"[r]uby\" | grep script/server || echo \"You're not running any, dawg.\""
-alias rake='noglob rake'
+#alias rake='noglob rake'
 alias ruby='noglob ruby'
 alias rdebug='noglob rdebug'
