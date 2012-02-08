@@ -3,27 +3,40 @@ call pathogen#infect()
 " no vi compatibility
 set nocompatible
 
+" Make backspace behave in a sane manner.
+set backspace=indent,eol,start
+
+" Switch syntax highlighting on
+syntax on
+
+" Enable file type detection and do language-dependent indenting.
+filetype plugin indent on
+
 " Show position in file
 set ruler
 
 " Show line numbers
 set number
 
-set noerrorbells  " No noise.
-set laststatus=2  " Always show status line.
+" No noise.
+set noerrorbells  
+
+" Always show status line.
+set laststatus=2
 
 " Use 2 spaces for tabs, turn on automatic indenting
 set tabstop=2
-set smarttab
-set shiftwidth=2
-set autoindent
-set expandtab
-set backspace=start,indent,eol
 
-" Turn on incremental search, case-insensitive search and syntax highlighting
+" set smarttab
+" set shiftwidth=2
+" set autoindent
+" set expandtab
+
+" incremental search
 set incsearch
+
+" case-insensitive search
 set ignorecase
-syntax on
 
 " Set leader to comma
 let mapleader = ","
@@ -31,42 +44,21 @@ let mapleader = ","
 " CommandT
 nmap <silent> <leader>g :CommandT<CR>
 
-" Set up command for NERDTree
+" NERDTree
 map <leader>n :NERDTreeToggle<CR>
 
-" Set up command for Tlist
+" Tlist
 map <leader>t :TlistToggle<CR>
-" only display tags for open buffer
+
+" only display tags for open buffer in Tlist
 let Tlist_Show_One_File = 1
 
-" Make backspace and cursor keys wrap accordingly"
-" TODO: delete if you find you don't need it
-" set whichwrap+=<,>,h,l
-
-" Make editing .vimrc easier
-map <leader>v :sp ~/.vimrc<CR>
-
+" point Tlist to exuberant ctags
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
-filetype plugin indent on
-
-" Invisible characters *********************************************************
-set listchars=trail:.,tab:>-,eol:$
-set nolist
-map <leader>i :set list!<CR> " Toggle invisible chars"
-
-" Omni Completion
-" *************************************************************
-autocmd FileType html :set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
-
-" May require ruby compiled in
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete 
+" Invisible characters 
+" set listchars=trail:.,tab:>-,eol:$
+" set nolist
 
 " put swap files in fixed dir
 :set dir=~/Documents/vim_swap
@@ -74,7 +66,7 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 " online ruby/rails documentation search
 function! OnlineDoc()
   if &ft =~ "ruby"
-    let s:urlTemplate = "http://railsapi.com/doc/rails-v2.3.8_ruby-v1.8/?q=%"
+    let s:urlTemplate = "http://railsapi.com/doc/rails-v3.0.8rc1_ruby-v1.9.2/?q=%"
   else
     return
   endif
@@ -88,10 +80,3 @@ map <silent> <leader>d :call OnlineDoc()<CR>
 
 " look for tags in pwd
 set tags=./tags
-
-" Restore cursor position
-" used for interactive_editor which allows using vim for irb commands
-autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
