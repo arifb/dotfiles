@@ -60,9 +60,6 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 " set listchars=trail:.,tab:>-,eol:$
 " set nolist
 
-" put swap files in fixed dir
-:set dir=~/Documents/vim_swap
-
 " online ruby/rails documentation search
 function! OnlineDoc()
   if &ft =~ "ruby"
