@@ -1,9 +1,4 @@
 .DS_Store
 *~
-*.swp
-*.swn
-*.swo
-*.swm
-*.swl
-*.swk
+*.sw*
 tags

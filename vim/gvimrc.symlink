@@ -2,7 +2,7 @@
 set lines=60
 set columns=220
 colorscheme solarized
-set background=dark
+set background=light
 set gfn=Inconsolata:h20
 set guioptions=egmrt
 set showtabline=2
