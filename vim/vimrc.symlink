@@ -1,5 +1,8 @@
 call pathogen#infect()
 
+" word wrap
+set linebreak
+
 " no vi compatibility
 set nocompatible
 
