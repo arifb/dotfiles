@@ -1,3 +1,5 @@
+set -g default-terminal "screen-256color"
+
 set -g prefix C-a
 unbind C-b
 set -s escape-time 1
@@ -9,3 +11,21 @@ bind j select-pane -D
 bind k select-pane -U 
 bind l select-pane -R
 setw -g mode-keys vi
+
+# reattach-to-user-namespace, making copy/paste work in tmux
+set -g default-command "reattach-to-user-namespace -l zsh"
+
+set -g mode-mouse on
+setw -g mouse-select-window on
+setw -g mouse-select-pane on
+
+# Copy mode
+setw -g mode-keys vi
+bind ` copy-mode
+unbind [
+unbind p
+bind p paste-buffer
+bind -t vi-copy v begin-selection
+bind -t vi-copy y copy-selection
+bind -t vi-copy Escape cancel
+bind y run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
