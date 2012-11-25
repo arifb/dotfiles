@@ -21,7 +21,7 @@ set linebreak
 set nocompatible
 
 " Make backspace behave in a sane manner.
-" set backspace=indent,eol,start
+set backspace=indent,eol,start
 
 " Switch syntax highlighting on
 syntax on
@@ -56,6 +56,8 @@ set ignorecase
 
 " CommandT
 nmap <silent> <leader>g :CommandT<CR>
+" allow CommandT to be cancelled with esc in terminal vim
+let g:CommandTCancelMap=['<ESC>','<C-c>']
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
