@@ -5,7 +5,7 @@ export ZSH=$HOME/.dotfiles
 export PROJECTS=~/projects
 
 # for bundle open and similar commands
-export EDITOR=mvim
+export EDITOR=vim
 
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
@@ -20,3 +20,7 @@ fi
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
+
+# tmux doesn't get 256 colour support without the below
+# maybe should be setting this elsewhere?
+alias tmux="TERM=screen-256color tmux"
