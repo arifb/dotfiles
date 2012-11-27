@@ -1,36 +1,43 @@
+# reattach-to-user-namespace, making copy/paste work in tmux
+set -g default-command "reattach-to-user-namespace -l zsh"
+
 # to get 256 colours in tmux
 set -g default-terminal "screen-256color"
 
-# set C-a as leader
-set -g prefix C-a
+# Set alt-A as leader/prefix
+# Yes, it says C-a is but to maintain compatibility
+# with apple keyboards, and the fact that i use a ms 4000, 
+# i have mapped command to alt, and vice-versa, for that particular keyboard. 
+#
+# When i do that, setting M-a as prefix doesn't work (don't know why)
+# so, i have left option (alt) mapped as ctrl in iterm2.
+# Wacky, but gets the job done.
+set -g prefix M-a
 unbind C-b
 
+# set super low delay when sending commands
 set -s escape-time 1
+
+# pane mgmt
 bind | split-window -h
 bind - split-window -v
 bind h select-pane -L 
 bind j select-pane -D 
 bind k select-pane -U 
 bind l select-pane -R
-setw -g mode-keys vi
-
-# reattach-to-user-namespace, making copy/paste work in tmux
-set -g default-command "reattach-to-user-namespace -l zsh"
-set -g mode-mouse on
-setw -g mouse-select-window on
-setw -g mouse-select-pane on
 
 # Copy mode
 setw -g mode-keys vi
-bind ` copy-mode
-unbind [
-unbind p
+unbind p     
 bind p paste-buffer
 bind -t vi-copy v begin-selection
 bind -t vi-copy y copy-selection
-bind -t vi-copy Escape cancel
+
+# should copy to os x clipboard with prefix y
+# doesn't seem to work
 bind y run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 
+# status bar config
 set -g status-left-length 52
 set -g status-right-length 451
 set -g status-fg white
