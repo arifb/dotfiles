@@ -26,6 +26,8 @@ set backspace=indent,eol,start
 " Switch syntax highlighting on
 syntax on
 
+hi SpellBad ctermfg=15
+
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
 
