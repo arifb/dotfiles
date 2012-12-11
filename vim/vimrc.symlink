@@ -10,6 +10,7 @@ set term=screen-256color
 colorscheme solarized
 set background=dark
 let g:solarized_termtrans = 1
+call togglebg#map("<F5>")
 
 " Set leader to comma
 let mapleader = ","
