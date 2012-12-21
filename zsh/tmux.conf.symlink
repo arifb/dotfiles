@@ -15,6 +15,9 @@ set -g default-terminal "screen-256color"
 set -g prefix M-a
 unbind C-b
 
+# trying to make C-a a work for nested tmux sessions
+bind-key a send-prefix
+
 # set super low delay when sending commands
 set -s escape-time 0
 
