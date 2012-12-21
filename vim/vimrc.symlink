@@ -1,16 +1,12 @@
 call pathogen#infect()
 
-" vim powerline, to get symbols
-let g:Powerline_symbols = 'fancy'
-
-" get colours in powerline
-set term=screen-256color
-
 " theme
 colorscheme solarized
 set background=dark
 let g:solarized_termtrans = 1
 call togglebg#map("<F5>")
+" get colours in powerline
+set term=screen-256color
 
 " Set leader to comma
 let mapleader = ","
@@ -57,6 +53,10 @@ set incsearch
 " case-insensitive search
 set ignorecase
 
+" config for plugins
+" vim powerline, to get symbols
+let g:Powerline_symbols = 'fancy'
+
 " CommandT
 nmap <silent> <leader>g :CommandT<CR>
 " allow CommandT to be cancelled with esc in terminal vim
@@ -73,6 +73,9 @@ let Tlist_Show_One_File = 1
 
 " point Tlist to exuberant ctags
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+
+" vim-slime
+let g:slime_target = "tmux"
 
 " online ruby/rails documentation search
 function! OnlineDoc()
