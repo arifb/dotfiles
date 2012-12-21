@@ -1,4 +1,5 @@
-# reattach-to-user-namespace, making copy/paste work in tmux
+# reattach-to-user-namespace, making copy/paste work in tmux on OS X
+# need to comment on Linux instances
 set -g default-command "reattach-to-user-namespace -l zsh"
 
 # to get 256 colours in tmux
@@ -15,7 +16,7 @@ set -g default-terminal "screen-256color"
 set -g prefix M-a
 unbind C-b
 
-# trying to make C-a a work for nested tmux sessions
+# make C-a a work for prefix for nested tmux sessions
 bind-key a send-prefix
 
 # set super low delay when sending commands

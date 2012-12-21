@@ -1,10 +1,12 @@
 call pathogen#infect()
 
 " theme
-colorscheme solarized
 set background=dark
+" comment below for linux instances
+colorscheme solarized
 let g:solarized_termtrans = 1
 call togglebg#map("<F5>")
+
 " get colours in powerline
 set term=screen-256color
 
