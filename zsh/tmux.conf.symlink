@@ -5,19 +5,15 @@ set -g default-command "reattach-to-user-namespace -l zsh"
 # to get 256 colours in tmux
 set -g default-terminal "screen-256color"
 
-# Set alt-A as leader/prefix
-# Yes, it says C-a is but to maintain compatibility
-# with apple keyboards, and the fact that i use a ms 4000, 
-# i have mapped command to alt, and vice-versa, for that particular keyboard. 
-#
-# When i do that, setting M-a as prefix doesn't work (don't know why)
-# so, i have left option (alt) mapped as ctrl in iterm2.
-# Wacky, but gets the job done.
-set -g prefix M-a
+# Set C-a as leader/prefix
+set -g prefix C-a
 unbind C-b
 
 # make C-a a work for prefix for nested tmux sessions
 bind-key a send-prefix
+
+# C-a C-a for last window
+bind-key C-a last-window
 
 # set super low delay when sending commands
 set -s escape-time 0
