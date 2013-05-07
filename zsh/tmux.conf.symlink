@@ -5,6 +5,16 @@ set -g default-command "reattach-to-user-namespace -l zsh"
 # to get 256 colours in tmux
 set -g default-terminal "screen-256color"
 
+# Set backtick as leader/prefix
+unbind C-b
+set -g prefix `
+
+# make backtick a prefix for nested tmux sessions
+bind-key a send-prefix
+
+# make double backtick last window
+bind-key ` last-window
+
 # Set C-a as leader/prefix
 #set -g prefix C-a
 #unbind C-b
@@ -14,14 +24,6 @@ set -g default-terminal "screen-256color"
 
 # C-a C-a for last window
 #bind-key C-a last-window
-
-# C-a C-a for last window
-#bind-key ` last-window
-
-# Set ` as leader/prefix
-unbind C-b
-set -g prefix `
-bind-key ` send-prefix
 
 # set super low delay when sending commands
 set -sg escape-time 0
