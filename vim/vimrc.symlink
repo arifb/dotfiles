@@ -3,6 +3,9 @@ call pathogen#infect()
 " theme
 set background=dark
 
+" prevent 'unloading' buffers
+set hidden
+
 " comment below for linux instances
 colorscheme solarized
 let g:solarized_termtrans = 1
@@ -97,3 +100,7 @@ map <silent> <leader>d :call OnlineDoc()<CR>
 
 " look for tags in pwd
 set tags=./tags
+
+" slimux shortcuts
+map <Leader>s :SlimuxREPLSendLine<CR>
+vmap <Leader>s :SlimuxREPLSendSelection<CR>
