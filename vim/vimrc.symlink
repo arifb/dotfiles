@@ -43,6 +43,12 @@ set number
 " No noise.
 set noerrorbells  
 
+" only blink cursor in insert
+set gcr=n:blinkon0
+
+" set _ as word separator
+set iskeyword-=_
+
 " Always show status line.
 set laststatus=2
 
