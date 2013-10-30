@@ -65,6 +65,9 @@ set incsearch
 " case-insensitive search
 set ignorecase
 
+" if a pattern contains an uppercase letter, it is case sensitive
+set smartcase
+
 " config for plugins
 " vim powerline, to get symbols
 let g:Powerline_symbols = 'fancy'
