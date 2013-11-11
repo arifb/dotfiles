@@ -34,6 +34,3 @@
 [submodule "vim/vim.symlink/bundle/slimux"]
 	path = vim/vim.symlink/bundle/slimux
 	url = git://github.com/epeli/slimux.git
-[submodule "bundle/mustache"]
-	path = bundle/mustache
-	url = git://github.com/mustache/vim-mode.git
