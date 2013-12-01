@@ -81,7 +81,7 @@ let g:CommandTCancelMap=['<ESC>','<C-c>']
 map <leader>n :NERDTreeToggle<CR>
 
 " Tlist
-map <leader>t :TlistToggle<CR>
+map <leader>t :TlistOpen<CR>
 
 " only display tags for open buffer in Tlist
 let Tlist_Show_One_File = 1
