@@ -113,3 +113,7 @@ set tags=./tags
 " slimux shortcuts
 map <Leader>s :SlimuxREPLSendLine<CR>
 vmap <Leader>s :SlimuxREPLSendSelection<CR>
+
+" vim colors writer
+let g:writer_journal_dir = '~/Desktop/vim-writer/'
+let g:writer_theme = 'dark'
