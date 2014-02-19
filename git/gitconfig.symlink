@@ -1,11 +1,6 @@
 [user]
   name = Arif Bandali
-  email = hello@arifb.com
-[alias]
-  promote = !$ZSH/bin/git-promote
-  wtf     = !$ZSH/bin/git-wtf
-  rank-contributers = !$ZSH/bin/git-rank-contributers
-  count   = !git shortlog -sn
+	email = hello@arifb.com
 [color]
   diff = auto
   status = auto
