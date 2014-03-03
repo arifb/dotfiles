@@ -5,7 +5,7 @@ export ZSH=$HOME/.dotfiles
 export PROJECTS=~/projects
 
 # for bundle open and similar commands
-export EDITOR=vim
+export EDITOR='mvim -v'
 
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
@@ -28,3 +28,5 @@ alias tmux="TERM=screen-256color tmux"
 # for virtual box; if not set, Vagrantfile takes precedent and
 # sets to 4096
 export VM_MEMORY=1572
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

@@ -1,2 +1,2 @@
 alias reload!='. ~/.zshrc'
-alias vim="mvim -v"
+alias vim='mvim -v'
