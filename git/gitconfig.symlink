@@ -1,18 +1,19 @@
 [user]
   name = Arif Bandali
-  email = hello@arifb.com
-[alias]
-  promote = !$ZSH/bin/git-promote
-  wtf     = !$ZSH/bin/git-wtf
-  rank-contributers = !$ZSH/bin/git-rank-contributers
-  count   = !git shortlog -sn
+	email = hello@arifb.com
 [color]
   diff = auto
   status = auto
   branch = auto
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
+  # ignoring this line as
+  # vim segfaulting in os x
+  # don't really care as use
+  # macvim, even in terminal,
+  # and fixing the system vim
+  # is going to be a pain
+  #editor = vim
 [apply]
   whitespace = nowarn
 [mergetool]
