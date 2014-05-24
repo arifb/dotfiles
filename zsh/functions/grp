@@ -1,1 +1,1 @@
-GREP_OPTIONS="-rIn --color --exclude-dir=\.git --exclude-dir=\log  --exclude-dir=\tmp --exclude-dir=\.gems --exclude=tags" grep "$@"
+GREP_OPTIONS="-rIn --color --exclude-dir=\.git --exclude-dir=\log --exclude-dir=\coverage --exclude-dir=\tmp --exclude-dir=\.gems --exclude=tags" grep "$@"
