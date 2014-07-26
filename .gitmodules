@@ -16,33 +16,18 @@
 [submodule "vim/vim.symlink/bundle/taglist"]
 	path = vim/vim.symlink/bundle/taglist
 	url = http://github.com/vim-scripts/taglist.vim
-[submodule "vim/vim.symlink/bundle/ragtag"]
-	path = vim/vim.symlink/bundle/ragtag
-	url = http://github.com/tpope/vim-ragtag
 [submodule "vim/vim.symlink/bundle/matchtag"]
 	path = vim/vim.symlink/bundle/matchtag
 	url = https://github.com/gregsexton/MatchTag.git
-[submodule "vim/vim.symlink/bundle/vim-colors-solarized"]
-	path = vim/vim.symlink/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/vim.symlink/bundle/vim-markdown"]
 	path = vim/vim.symlink/bundle/vim-markdown
 	url = https://github.com/hallison/vim-markdown.git
-[submodule "vim/vim.symlink/bundle/vim-powerline"]
-	path = vim/vim.symlink/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/vim.symlink/bundle/slimux"]
 	path = vim/vim.symlink/bundle/slimux
 	url = git://github.com/epeli/slimux.git
-[submodule "vim/vim.symlink/bundle/mustache"]
-	path = vim/vim.symlink/bundle/mustache
-	url = git://github.com/mustache/vim-mode.git
 [submodule "vim/vim.symlink/bundle/tabular"]
 	path = vim/vim.symlink/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
 [submodule "vim/vim.symlink/bundle/vim-colors-writer"]
 	path = vim/vim.symlink/bundle/vim-colors-writer
 	url = git://github.com/nathanlong/vim-colors-writer.git
-[submodule "vim/vim.symlink/bundle/vim-coffee-script"]
-	path = vim/vim.symlink/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
