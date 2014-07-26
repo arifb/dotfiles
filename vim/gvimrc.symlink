@@ -1,9 +1,8 @@
 " gui
 set lines=60
 set columns=220
-colorscheme molokai
-set background=dark
-set gfn=Ubuntu\ Mono\ for\ Powerline:h18
-" set gfn=Ubuntu\ Mono:h18
+" colorscheme molokai
+" set background=dark
+set gfn=Ubuntu\ Mono:h18
 set guioptions=egmrt
 set showtabline=2
