@@ -3,16 +3,11 @@ call pathogen#infect()
 " theme
 syntax enable
 set background=dark
-" comment below for linux instances
 colorscheme solarized
+call togglebg#map("<F5>")
 
 " prevent 'unloading' buffers
 set hidden
-" let g:solarized_termtrans = 1
-call togglebg#map("<F5>")
-
-" get colours in powerline
-" set term=screen-256color
 
 " Set leader to comma
 let mapleader = ","
