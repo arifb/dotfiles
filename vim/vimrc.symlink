@@ -111,3 +111,7 @@ vmap <Leader>s :SlimuxREPLSendSelection<CR>
 
 " vim colors writer
 let g:writer_journal_dir = '~/Desktop/vim-writer/'
+
+" vim-markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:markdown_github_languages = ['ruby', 'erb=eruby']

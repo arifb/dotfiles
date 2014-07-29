@@ -20,8 +20,8 @@
 	path = vim/vim.symlink/bundle/matchtag
 	url = https://github.com/gregsexton/MatchTag.git
 [submodule "vim/vim.symlink/bundle/vim-markdown"]
-	path = vim/vim.symlink/bundle/vim-markdown
-	url = https://github.com/hallison/vim-markdown.git
+  path = vim/vim.symlink/bundle/vim-markdown
+  url = https://github.com/hallison/vim-markdown.git
 [submodule "vim/vim.symlink/bundle/slimux"]
 	path = vim/vim.symlink/bundle/slimux
 	url = git://github.com/epeli/slimux.git
@@ -34,3 +34,6 @@
 [submodule "vim/vim.symlink/bundle/solarized"]
 	path = vim/vim.symlink/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/vim.symlink/bundle/vim-coffe-script"]
+	path = vim/vim.symlink/bundle/vim-coffe-script
+	url = https://github.com/kchmck/vim-coffee-script.git
