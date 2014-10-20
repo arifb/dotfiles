@@ -5,9 +5,9 @@ export ZSH=$HOME/.dotfiles
 export PROJECTS=~/projects
 
 # for bundle open and similar commands
-export EDITOR='mvim -v'
+export EDITOR='vim'
 
-# source every .zsh file in this rep
+# source every .zsh file in this repo
 for config_file ($ZSH/**/*.zsh) source $config_file
 
 # use .localrc for SUPER SECRET CRAP that you don't
@@ -23,10 +23,6 @@ compinit
 
 # tmux doesn't get 256 colour support without the below
 # maybe should be setting this elsewhere?
-alias tmux="TERM=screen-256color tmux"
+# alias tmux="TERM=screen-256color tmux"
 
-# for virtual box; if not set, Vagrantfile takes precedent and
-# sets to 4096
-export VM_MEMORY=1572
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+eval "$(rbenv init -)"

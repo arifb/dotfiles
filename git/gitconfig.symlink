@@ -7,13 +7,7 @@
   branch = auto
 [core]
   excludesfile = ~/.gitignore
-  # ignoring this line as
-  # vim segfaulting in os x
-  # don't really care as use
-  # macvim, even in terminal,
-  # and fixing the system vim
-  # is going to be a pain
-  #editor = vim
+  editor = vim
 [apply]
   whitespace = nowarn
 [mergetool]
