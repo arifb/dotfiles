@@ -87,20 +87,8 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 " vim-slime
 let g:slime_target = "tmux"
 
-" online ruby/rails documentation search
-function! OnlineDoc()
-  if &ft =~ "ruby"
-    let s:urlTemplate = "http://railsapi.com/doc/rails-v3.0.8rc1_ruby-v1.9.2/?q=%"
-  else
-    return
-  endif
-  let s:wordUnderCursor = expand("<cword>")
-  let s:url = substitute(s:urlTemplate, "%", s:wordUnderCursor, "g")
-  let s:cmd = "!open \"" . s:url . "\""
-  execute s:cmd
-endfunction
-
-map <silent> <leader>d :call OnlineDoc()<CR>
+" delete buffer without losing split
+map <silent> <leader>d :bp\|bd #<CR>
 
 " look for tags in pwd
 set tags=./tags
