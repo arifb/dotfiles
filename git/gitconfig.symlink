@@ -12,3 +12,5 @@
   whitespace = nowarn
 [mergetool]
   keepBackup = false
+[push]
+	default = simple

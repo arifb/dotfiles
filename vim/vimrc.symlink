@@ -47,6 +47,9 @@ set iskeyword-=_
 " Always show status line.
 set laststatus=2
 
+" don't pop the 'ATTENTION' message when an existing swap file is found
+set shortmess+=A
+
 " Use 2 spaces for tabs, turn on automatic indenting
 set tabstop=2
 set smarttab
