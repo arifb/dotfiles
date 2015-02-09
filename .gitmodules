@@ -40,3 +40,6 @@
 [submodule "vim/vim.symlink/bundle/vimroom"]
 	path = vim/vim.symlink/bundle/vimroom
 	url = git@github.com:mikewest/vimroom.git
+[submodule "vim/vim.symlink/bundle/vim-hackernews"]
+	path = vim/vim.symlink/bundle/vim-hackernews
+	url = git@github.com:ryanss/vim-hackernews.git
