@@ -42,7 +42,7 @@ set noerrorbells
 set gcr=n:blinkon0
 
 " set _ as word separator
-set iskeyword-=_
+" set iskeyword-=_
 
 " Always show status line.
 set laststatus=2

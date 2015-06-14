@@ -8,7 +8,7 @@ export PROJECTS=~/projects
 export EDITOR='vim'
 
 # for vagrant virtual machine under vmware fusion
-export VM_MEMORY=1536
+export VM_MEMORY=2048
 
 # source every .zsh file in this repo
 for config_file ($ZSH/**/*.zsh) source $config_file
