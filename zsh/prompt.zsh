@@ -55,7 +55,7 @@ need_push () {
   fi
 }
 
-export PROMPT=$'%{$fg[red]%}$(ruby_version) %{\e[0;36m%}%1/%{\e[0m%}/ '
+export PROMPT=$'%{\e[0;36m%}%1/%{\e[0m%}/ '
 set_prompt () {
   export RPROMPT="$(git_prompt_info)$(git_dirty)$(need_push)"
 }
