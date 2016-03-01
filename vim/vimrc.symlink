@@ -74,6 +74,7 @@ let g:Powerline_symbols = 'fancy'
 nmap <silent> <leader>g :CommandT<CR>
 " allow CommandT to be cancelled with esc in terminal vim
 let g:CommandTCancelMap=['<ESC>','<C-c>']
+let g:CommandTMaxFiles=500000
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
