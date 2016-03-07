@@ -32,7 +32,7 @@ set -sg escape-time 0
 set -g base-index 1
 setw -g pane-base-index 1
 
-set -g mode-mouse on
+set -g mouse on
 
 # pane mgmt
 bind | split-window -h
