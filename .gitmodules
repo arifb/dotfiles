@@ -52,3 +52,6 @@
 [submodule "vim/vim.symlink/bundle/vim-jsx"]
 	path = vim/vim.symlink/bundle/vim-jsx
 	url = git@github.com:mxw/vim-jsx.git
+[submodule "vim/vim.symlink/bundle/colorschemes"]
+	path = vim/vim.symlink/bundle/colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
