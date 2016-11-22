@@ -3,7 +3,7 @@ call pathogen#infect()
 " theme
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme molokai
 call togglebg#map("<F5>")
 
 " prevent 'unloading' buffers
@@ -42,10 +42,13 @@ set noerrorbells
 set gcr=n:blinkon0
 
 " set _ as word separator
-set iskeyword-=_
+" set iskeyword-=_
 
 " Always show status line.
 set laststatus=2
+
+" don't pop the 'ATTENTION' message when an existing swap file is found
+set shortmess+=A
 
 " Use 2 spaces for tabs, turn on automatic indenting
 set tabstop=2
@@ -71,6 +74,7 @@ let g:Powerline_symbols = 'fancy'
 nmap <silent> <leader>g :CommandT<CR>
 " allow CommandT to be cancelled with esc in terminal vim
 let g:CommandTCancelMap=['<ESC>','<C-c>']
+let g:CommandTMaxFiles=500000
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
@@ -103,3 +107,7 @@ let g:writer_journal_dir = '~/Desktop/vim-writer/'
 " vim-markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 let g:markdown_github_languages = ['ruby', 'erb=eruby']
+
+" vim-jsx
+" allow syntax highlighting in files other than jsx (ie. js)
+let g:jsx_ext_required = 0
