@@ -8,7 +8,7 @@ export PROJECTS=~/projects
 export EDITOR='vim'
 
 # source every .zsh file in this repo
-for config_file ($ZSH/**/*.zsh) source $config_file
+# for config_file ($ZSH/**/*.zsh) source $config_file
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
