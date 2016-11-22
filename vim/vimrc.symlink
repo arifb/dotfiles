@@ -3,7 +3,7 @@ call pathogen#infect()
 " theme
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme molokai
 call togglebg#map("<F5>")
 
 " prevent 'unloading' buffers
