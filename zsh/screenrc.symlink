@@ -1,6 +1,0 @@
-# status line
-hardstatus alwayslastline
-hardstatus string '%{= KW}%-Lw%{= KW}%50>%n%f* %t%{= KW}%+Lw%< %{= KW}%-=%D %d %M %Y %c:%s%{-}'
-
-# ensures we have plenty of scroll buffer
-defscrollback 5000
