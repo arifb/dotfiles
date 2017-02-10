@@ -7,10 +7,6 @@ export PROJECTS=~/projects
 # for bundle open and similar commands
 export EDITOR='vim'
 
-# for vagrant virtual machine under vmware fusion
-export VM_MEMORY=8192
-export VM_NUM_CPUS=8
-
 # source every .zsh file in this repo
 for config_file ($ZSH/**/*.zsh) source $config_file
 
@@ -25,8 +21,10 @@ fi
 autoload -U compinit
 compinit
 
-# tmux doesn't get 256 colour support without the below
-# maybe should be setting this elsewhere?
-# alias tmux="TERM=screen-256color tmux"
-
 eval "$(rbenv init -)"
+
+PATH="/Users/arif/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/arif/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/arif/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/arif/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/arif/perl5"; export PERL_MM_OPT;

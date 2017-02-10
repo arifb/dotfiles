@@ -3,8 +3,7 @@ call pathogen#infect()
 " theme
 syntax enable
 set background=dark
-colorscheme molokai
-call togglebg#map("<F5>")
+colorscheme chroma
 
 " prevent 'unloading' buffers
 set hidden
@@ -23,8 +22,6 @@ set backspace=indent,eol,start
 
 " Switch syntax highlighting on
 syntax on
-
-hi SpellBad ctermfg=15
 
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
@@ -47,9 +44,6 @@ set gcr=n:blinkon0
 " Always show status line.
 set laststatus=2
 
-" don't pop the 'ATTENTION' message when an existing swap file is found
-set shortmess+=A
-
 " Use 2 spaces for tabs, turn on automatic indenting
 set tabstop=2
 set smarttab
@@ -66,15 +60,12 @@ set ignorecase
 " if a pattern contains an uppercase letter, it is case sensitive
 set smartcase
 
-" config for plugins
-" vim powerline, to get symbols
-let g:Powerline_symbols = 'fancy'
-
 " CommandT
 nmap <silent> <leader>g :CommandT<CR>
 " allow CommandT to be cancelled with esc in terminal vim
 let g:CommandTCancelMap=['<ESC>','<C-c>']
 let g:CommandTMaxFiles=500000
+let g:CommandTWildIgnore=&wildignore . ",*/client,*/nightwatch,*/other-sites,*/vendor"
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
@@ -82,24 +73,15 @@ map <leader>n :NERDTreeToggle<CR>
 " Tlist
 map <leader>t :TlistOpen<CR>
 
-" only display tags for open buffer in Tlist
-let Tlist_Show_One_File = 1
-
-" point Tlist to exuberant ctags
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-
-" vim-slime
-let g:slime_target = "tmux"
+" slimux shortcuts
+map <Leader>s :SlimuxREPLSendLine<CR>
+vmap <Leader>s :SlimuxREPLSendSelection<CR>
 
 " delete buffer without losing split
 map <silent> <leader>d :bp\|bd #<CR>
 
 " look for tags in pwd
-set tags=./tags
-
-" slimux shortcuts
-map <Leader>s :SlimuxREPLSendLine<CR>
-vmap <Leader>s :SlimuxREPLSendSelection<CR>
+set tags=./tags;
 
 " vim colors writer
 let g:writer_journal_dir = '~/Desktop/vim-writer/'
