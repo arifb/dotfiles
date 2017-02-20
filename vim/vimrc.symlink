@@ -66,6 +66,7 @@ nmap <silent> <leader>g :CommandT<CR>
 let g:CommandTCancelMap=['<ESC>','<C-c>']
 let g:CommandTMaxFiles=500000
 let g:CommandTWildIgnore=&wildignore . ",*/client,*/nightwatch,*/other-sites,*/vendor"
+let g:CommandTTraverseSCM = 'pwd'
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
