@@ -28,15 +28,6 @@
 [submodule "vim/vim.symlink/bundle/tabular"]
 	path = vim/vim.symlink/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "vim/vim.symlink/bundle/solarized"]
-	path = vim/vim.symlink/bundle/solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/vim.symlink/bundle/vimroom"]
-	path = vim/vim.symlink/bundle/vimroom
-	url = git@github.com:mikewest/vimroom.git
-[submodule "vim/vim.symlink/bundle/vim-hackernews"]
-	path = vim/vim.symlink/bundle/vim-hackernews
-	url = git@github.com:ryanss/vim-hackernews.git
 [submodule "vim/vim.symlink/bundle/vim-coffee-script"]
 	path = vim/vim.symlink/bundle/vim-coffee-script
 	url = git@github.com:kchmck/vim-coffee-script.git
@@ -49,12 +40,12 @@
 [submodule "vim/vim.symlink/bundle/vim-jsx"]
 	path = vim/vim.symlink/bundle/vim-jsx
 	url = git@github.com:mxw/vim-jsx.git
-[submodule "vim/vim.symlink/bundle/colorschemes"]
-	path = vim/vim.symlink/bundle/colorschemes
-	url = https://github.com/flazz/vim-colorschemes.git
 [submodule "vim/vim.symlink/bundle/ack.vim"]
 	path = vim/vim.symlink/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/vim.symlink/bundle/tagbar"]
 	path = vim/vim.symlink/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
+[submodule "vim/vim.symlink/bundle/goyo"]
+	path = vim/vim.symlink/bundle/goyo
+	url = https://github.com/junegunn/goyo.vim.git
