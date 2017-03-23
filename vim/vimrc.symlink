@@ -3,7 +3,7 @@ call pathogen#infect()
 " theme
 syntax enable
 set background=dark
-colorscheme happy_hacking
+colorscheme tender
 
 " prevent 'unloading' buffers
 set hidden
