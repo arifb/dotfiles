@@ -50,17 +50,13 @@ bind -r L resize-pane -R 5
 
 # Copy mode
 setw -g mode-keys vi
-unbind p     
+unbind p
 bind p paste-buffer
-bind -t vi-copy v begin-selection
-bind -t vi-copy y copy-selection
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection
 
 # Set scrollback buffer to 10000 lines
 set -g history-limit 10000
-
-# should copy to os x clipboard with prefix y
-# doesn't seem to work
-# bind y run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 
 # status bar config
 set -g status-left-length 52
