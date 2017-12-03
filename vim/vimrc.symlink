@@ -2,8 +2,7 @@ call pathogen#infect()
 
 " theme
 syntax enable
-set background=dark
-colorscheme tender
+colorscheme carbonized-light
 
 " prevent 'unloading' buffers
 set hidden
@@ -25,6 +24,9 @@ syntax on
 
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
+
+" activate matchit
+runtime macros/matchit.vim
 
 " Show position in file
 set ruler
