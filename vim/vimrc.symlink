@@ -2,7 +2,12 @@ call pathogen#infect()
 
 " theme
 syntax enable
-colorscheme carbonized-light
+colorscheme vrunchbang-dark
+set background=dark
+
+" for writing
+"colorscheme eink
+"set background=light
 
 " prevent 'unloading' buffers
 set hidden
