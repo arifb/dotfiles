@@ -2,8 +2,8 @@ call pathogen#infect()
 
 " theme
 syntax enable
-colorscheme vrunchbang-dark
-set background=dark
+colorscheme pencil
+set background=light
 
 " for writing
 "colorscheme eink
