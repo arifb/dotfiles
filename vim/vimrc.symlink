@@ -2,7 +2,7 @@ call pathogen#infect()
 
 " theme
 syntax enable
-colorscheme pencil
+colorscheme vrunchbang-light
 set background=light
 
 " for writing
@@ -67,13 +67,8 @@ set ignorecase
 " if a pattern contains an uppercase letter, it is case sensitive
 set smartcase
 
-" CommandT
-nmap <silent> <leader>g :CommandT<CR>
-" allow CommandT to be cancelled with esc in terminal vim
-let g:CommandTCancelMap=['<ESC>','<C-c>']
-let g:CommandTMaxFiles=500000
-let g:CommandTWildIgnore=&wildignore . ",*/client,*/nightwatch,*/other-sites,*/vendor"
-let g:CommandTTraverseSCM = 'pwd'
+" ctrl p, use pwd as working directory for search
+let g:ctrlp_working_path_mode = 'w'
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
