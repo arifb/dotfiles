@@ -21,7 +21,7 @@ export ZSH=$HOME/.oh-my-zsh
 # # Set name of the theme to load. Optionally, if you set this to "random"
 # # it'll load a random theme each time that oh-my-zsh is loaded.
 # # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="geometry/geometry"
 #
 # # Uncomment the following line to use case-sensitive completion.
 # # CASE_SENSITIVE="true"
@@ -80,13 +80,13 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
-alias cd-arbour-dev='cd ~/projects/arbour/arbour/railsbox/development' 
-alias cd-codetree-dev='cd ~/projects/codetree/codetree/railsbox/development' 
-alias cd-w2gw-dev='cd ~/projects/dhs/w2gw/railsbox/development' 
-alias cd-eposter-dev='cd ~/projects/exhibits/railsbox/development' 
+alias cd-arbour='cd ~/projects/arbour/arbour/railsbox/development' 
+alias cd-certistay-tablet='cd /Users/arif/projects/certistay/certistay-tablet' 
+alias cd-certistay-web='cd /Users/arif/projects/certistay/certistay-web/railsbox/development' 
+alias cd-pragmatic='cd /Users/arif/projects/pragmatic/pragmatic/railsbox/development' 
 
 # # Compilation flags
 # # export ARCHFLAGS="-arch x86_64"
@@ -95,3 +95,5 @@ alias cd-eposter-dev='cd ~/projects/exhibits/railsbox/development'
 # # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 eval "$(rbenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

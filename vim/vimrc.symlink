@@ -2,8 +2,8 @@ call pathogen#infect()
 
 " theme
 syntax enable
-colorscheme vrunchbang-light
-set background=light
+" colorscheme vrunchbang-dark
+colorscheme vrunchbang-dark
 
 " for writing
 "colorscheme eink
@@ -69,6 +69,8 @@ set smartcase
 
 " ctrl p, use pwd as working directory for search
 let g:ctrlp_working_path_mode = 'w'
+" ctrl p, ignore dirs
+let g:ctrlp_custom_ignore = { 'dir':  'node_modules$\|ios$\|android$' }
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
@@ -96,3 +98,13 @@ let g:markdown_github_languages = ['ruby', 'erb=eruby']
 " vim-jsx
 " allow syntax highlighting in files other than jsx (ie. js)
 let g:jsx_ext_required = 0
+
+" ale
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint']
+\}
+let g:ale_fix_on_save = 1
+
+" ack.vim
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
